@@ -1,6 +1,6 @@
 image:
-#  - Visual Studio 2017
   - macos
+  # - macos-mojave
 
 environment:
   DEFAULT_VAR1: "Value1"
@@ -14,18 +14,11 @@ init:
     if (!(Test-Path env:VAR1)) { $env:VAR1 = $env:DEFAULT_VAR1 }
     echo "merged VAR1 = $env:VAR1";
 
-
-build_script:
-  - ps: echo "VAR1 = $env:VAR1"
-
 for:
 -
   matrix:
     only:
       - image: macos
-
-#  environment:
-#    VAR1: "Value1"
 
   build_script:
     - sh: >-
@@ -36,15 +29,3 @@ for:
           echo "not string true"
         fi
     - ps: echo "VAR1 for catalina = $env:VAR1"
-
--
-  matrix:
-    only:
-      - image: macos-mojave
-  
-#  environment:
-#    VAR1: "Value1"
-  
-  build_script:
-    - ps: echo "VAR1 for mojave = $env:VAR1"
-

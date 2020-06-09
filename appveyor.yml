@@ -14,6 +14,9 @@ for:
     only:
       - image: macos
 
+  environment:
+    VAR1: "Value1"
+
   build_script:
     - ps: echo "VAR1 for catalina = $env:VAR1"
 
@@ -21,6 +24,9 @@ for:
   matrix:
     only:
       - image: macos-mojave
+  
+  environment:
+    VAR1: "Value1"
   
   build_script:
     - ps: echo "VAR1 for mojave = $env:VAR1"

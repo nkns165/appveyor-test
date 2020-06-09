@@ -1,0 +1,10 @@
+image:
+  - macos
+  - macos-mojave
+
+environment:
+  VAR1: "Value1"
+
+build_script:
+  - ps: echo "VAR1 = $env:VAR1"
+

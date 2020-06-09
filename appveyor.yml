@@ -1,6 +1,6 @@
 image:
   - macos
-  # - macos-mojave
+  - macos-mojave
 
 environment:
   DEFAULT_VAR1: "Value1"

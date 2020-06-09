@@ -28,7 +28,7 @@ for:
 #    VAR1: "Value1"
 
   build_script:
-    - sh : >-
+    - sh: >-
         echo $APPVEYOR_SCHEDULED_BUILD
         if [ "${APPVEYOR_SCHEDULED_BUILD}" = "true" ]; then
           echo "string true"

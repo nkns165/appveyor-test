@@ -13,6 +13,14 @@ init:
     if (!(Test-Path env:VAR1)) { echo "Not exist" } else { echo "Exist"}
     if (!(Test-Path env:VAR1)) { $env:VAR1 = $env:DEFAULT_VAR1 }
     echo "merged VAR1 = $env:VAR1";
+  sh : >-
+    echo $APPVEYOR_SCHEDULED_BUILD
+    if [ "${APPVEYOR_SCHEDULED_BUILD}" = "true" ]; then
+      echo "string true"
+    else
+      echo "not string true"
+    fi
+
 
 build_script:
   - ps: echo "VAR1 = $env:VAR1"

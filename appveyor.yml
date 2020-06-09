@@ -9,9 +9,9 @@ init:
   ps : >-
     echo "DEFAULT_VAR1 = $env:DEFAULT_VAR1";
     echo "VAR1 = $env:VAR1";
-    if (!(Test-Path Variable:VAR1)) { echo "Not exist" } else { echo "Exist"}
-    if ((Test-Path Variable:VAR1) -eq $False) { echo "Not exist" } else { echo "Exist"}
-    if ((Test-Path Variable:VAR1) -eq "False") { echo "Not exist" } else { echo "Exist"}
+    if (!(Test-Path Environment:VAR1)) { echo "Not exist" } else { echo "Exist"}
+    if ((Test-Path Environment:VAR1) -eq $False) { echo "Not exist" } else { echo "Exist"}
+    if ((Test-Path Environment:VAR1) -eq "False") { echo "Not exist" } else { echo "Exist"}
 
 build_script:
   - ps: echo "VAR1 = $env:VAR1"

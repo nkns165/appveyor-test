@@ -7,11 +7,14 @@ environment:
 
 init:
   ps : >-
-    echo "DEFAULT_VAR1 = $env:DEFAULT_VAR1"
-    echo "VAR1 = $env:VAR1"
-    RESULT = (Test-Path Variable:VAR1)
-    echo ${RESULT}
-    echo "RESULT = ${RESULT}"
+    echo "DEFAULT_VAR1 = $env:DEFAULT_VAR1";
+    echo "VAR1 = $env:VAR1";
+    RESULT = (Test-Path Variable:VAR1);
+    echo ${RESULT};
+    echo "RESULT = ${RESULT}";
+    if (!(Test-Path Variable:VAR1)) { echo "Not exist" } else { echo "Exist"}
+    if ((Test-Path Variable:VAR1) -eq $False) { echo "Not exist" } else { echo "Exist"}
+    if ((Test-Path Variable:VAR1) -eq "False") { echo "Not exist" } else { echo "Exist"}
 
 build_script:
   - ps: echo "VAR1 = $env:VAR1"

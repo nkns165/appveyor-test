@@ -8,3 +8,20 @@ environment:
 build_script:
   - ps: echo "VAR1 = $env:VAR1"
 
+for:
+-
+  matrix:
+    only:
+      - image: macos
+
+  build_script:
+    - ps: echo "VAR1 for catalina = $env:VAR1"
+
+-
+  matrix:
+    only:
+      - image: macos-mojave
+  
+  build_script:
+    - ps: echo "VAR1 for mojave = $env:VAR1"
+

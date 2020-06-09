@@ -28,13 +28,13 @@ for:
 #    VAR1: "Value1"
 
   build_script:
-    sh : >-
-      echo $APPVEYOR_SCHEDULED_BUILD
-      if [ "${APPVEYOR_SCHEDULED_BUILD}" = "true" ]; then
-        echo "string true"
-      else
-        echo "not string true"
-      fi
+    - sh : >-
+        echo $APPVEYOR_SCHEDULED_BUILD
+        if [ "${APPVEYOR_SCHEDULED_BUILD}" = "true" ]; then
+          echo "string true"
+        else
+          echo "not string true"
+        fi
     - ps: echo "VAR1 for catalina = $env:VAR1"
 
 -

@@ -2,8 +2,16 @@ image:
   - macos
   - macos-mojave
 
-# environment:
-#   VAR1: "Value1"
+environment:
+  DEFAULT_VAR1: "Value1"
+
+init:
+  ps : >-
+    echo "DEFAULT_VAR1 = $env:DEFAULT_VAR1"
+    echo "VAR1 = $env:VAR1"
+    RESULT = (Test-Path Variable:VAR1)
+    echo ${RESULT}
+    echo "RESULT = ${RESULT}"
 
 build_script:
   - ps: echo "VAR1 = $env:VAR1"

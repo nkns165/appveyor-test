@@ -29,7 +29,9 @@ for:
 -
   matrix:
     only:
-      - image: Visual Studio 2017
+      environment:
+        - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+#      - image: Visual Studio 2017
 
   build_script:
     - ps: echo "VAR1 = $env:VAR1"

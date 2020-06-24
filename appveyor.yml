@@ -1,6 +1,6 @@
-image:
-  - Visual Studio 2017
-  - Visual Studio 2019
+#image:
+#  - Visual Studio 2017
+#  - Visual Studio 2019
 
 environment:
   FIXED_VAR: "Fixed value"
@@ -21,6 +21,9 @@ init:
     if (!(Test-Path env:VAR1)) { echo "Not exist" } else { echo "Exist"}
     if (!(Test-Path env:VAR1)) { $env:VAR1 = $env:DEFAULT_VAR1 }
     echo "merged VAR1 = $env:VAR1";
+
+build_script:
+  ps: echo "Skip this settings"
 
 for:
 -

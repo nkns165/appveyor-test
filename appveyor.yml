@@ -28,6 +28,8 @@ for:
       - image: Visual Studio 2017
 
   build_script:
+    - ps: if ($env:DEFAULT_VAR1 -eq "Value2") { Exit-AppVeyorBuild }
+    - ps: echo "VAR1 = $env:VAR1"
     - ps: echo "VAR1 = $env:VAR1"
 
 -

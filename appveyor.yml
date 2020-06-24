@@ -1,16 +1,12 @@
-#image:
-#  - Visual Studio 2017
-#  - Visual Studio 2019
+image:
+  - Visual Studio 2017
+  - Visual Studio 2019
 
 environment:
   FIXED_VAR: "Fixed value"
   matrix:
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-      DEFAULT_VAR1: "Value1"
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-      DEFAULT_VAR1: "Value2"
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      DEFAULT_VAR1: "Value1"
+    - DEFAULT_VAR1: "Value2"
+    - DEFAULT_VAR1: "Value1"
 
 
 init:
@@ -29,9 +25,7 @@ for:
 -
   matrix:
     only:
-      - environment:
-          - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-#      - image: Visual Studio 2017
+      - image: Visual Studio 2017
 
   build_script:
     - ps: echo "VAR1 = $env:VAR1"

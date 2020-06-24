@@ -1,9 +1,17 @@
-image:
-  - macos
-  - macos-mojave
+# image:
+#   - Visual Studio 2017
+#   - Visual Studio 2019
 
 environment:
-  DEFAULT_VAR1: "Value1"
+  FIXED_VAR: "Fixed value"
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      DEFAULT_VAR1: "Value1"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      DEFAULT_VAR1: "Value2"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      DEFAULT_VAR1: "Value1"
+
 
 init:
   ps : >-
@@ -18,14 +26,16 @@ for:
 -
   matrix:
     only:
-      - image: macos
+      - image: Visual Studio 2017
 
   build_script:
-    - sh: >-
-        echo $APPVEYOR_SCHEDULED_BUILD;
-        if [ "${APPVEYOR_SCHEDULED_BUILD}" = "true" ]; then
-          echo "string true"
-        else
-          echo "not string true"
-        fi
-    - ps: echo "VAR1 for catalina = $env:VAR1"
+    - ps: echo "VAR1 = $env:VAR1"
+
+-
+  matrix:
+    only:
+      - image: Visual Studio 2019
+
+  build_script:
+    - ps: echo "VAR1 = $env:VAR1"
+

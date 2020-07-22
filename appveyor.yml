@@ -3,9 +3,9 @@ image: Windows
 
 environment:
   FIXED_VAR: "Fixed value"
-  matrix:
-    - DEFAULT_VAR1: "Value2"
-    - DEFAULT_VAR1: "Value1"
+  # matrix:
+  #   - DEFAULT_VAR1: "Value2"
+  #   - DEFAULT_VAR1: "Value1"
 
 
 init:

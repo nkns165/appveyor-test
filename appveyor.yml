@@ -1,5 +1,5 @@
-build_cloud: local-win10
-image: Windows
+#build_cloud: local-win10
+#image: Windows
 
 environment:
   FIXED_VAR: "Fixed value"

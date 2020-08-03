@@ -1,4 +1,6 @@
-#build_cloud: local-win10
+build_cloud: 
+  - ""
+  - DESKTOP-E839IT8
 #image: Windows
 
 environment:

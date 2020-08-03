@@ -10,7 +10,7 @@ environment:
 
 init:
   ps : >-
-    Exit-AppVeyorBuild;
+    echo "BUILD_CLOUD = $env:APPVEYOR_BUILD_WORKER_CLOUD";
     echo "DEFAULT_VAR1 = $env:DEFAULT_VAR1";
     echo "VAR1 = $env:VAR1";
     echo (Test-Path env:VAR1);

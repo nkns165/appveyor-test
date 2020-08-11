@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nkns165/appveyor-test#readme",
   "dependencies": {
+    "chromedriver": "^84.0.1",
     "wd": "^1.12.1"
   }
 }

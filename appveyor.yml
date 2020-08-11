@@ -1,6 +1,3 @@
-build_cloud: 
-  - ""
-  - DESKTOP-E839IT8
 #image: Windows
 
 environment:
@@ -19,6 +16,9 @@ init:
     if (!(Test-Path env:VAR1)) { echo "Not exist" } else { echo "Exist"}
     if (!(Test-Path env:VAR1)) { $env:VAR1 = $env:DEFAULT_VAR1 }
     echo "merged VAR1 = $env:VAR1";
+
+install:
+  ps: npm install
 
 build_script:
   ps: echo "Skip this settings"

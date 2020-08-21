@@ -7,7 +7,7 @@ environment:
 init:
   ps : >-
     echo "BUILD_CLOUD = $env:APPVEYOR_BUILD_WORKER_CLOUD";
-    ./scripts/hello.ps1
+    .\\scripts\\hello.ps1
 
 install:
   ps: npm install

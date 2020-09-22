@@ -9,8 +9,9 @@ init:
     if ($True) {
       echo "Exit"
       Exit-AppVeyorBuild
+    } else {
+      git config --global core.autocrlf input
     }
-    git config --global core.autocrlf input
 
 install:
   ps: npm install

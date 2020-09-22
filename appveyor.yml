@@ -6,7 +6,8 @@ environment:
 
 init:
   ps : >-
-    if ($env:VAR1 -eq $True) {
+    if ($True) {
+      echo "Exit"
       Exit-AppVeyorBuild
     }
     git config --global core.autocrlf input

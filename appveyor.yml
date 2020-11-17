@@ -11,6 +11,6 @@ build_script:
   sh: echo "Build"
 
 test_script:
-  sh: echo ${FOO}
-  sh: node test.js
+  - sh: echo ${FOO}
+  - sh: node test.js
 

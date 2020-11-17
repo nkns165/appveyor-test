@@ -12,5 +12,5 @@ build_script:
 
 test_script:
   - sh: echo ${FOO}
-  - sh: sudo bash -c "node test.js"
+  - sh: FOO=BAR node test.js
 

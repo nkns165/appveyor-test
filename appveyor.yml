@@ -1,20 +1,16 @@
 image:
-  - Visual Studio 2017
+  - macos
 
 environment:
   VAR1: true
-
-init:
-  ps : >-
-    if ($True) {
-      echo "Exit"
-      Exit-AppVeyorBuild
-    } else {
-      git config --global core.autocrlf input
-    }
-
-install:
-  ps: npm install
+  FOO:
+    secure: Mrgyeo6XYPXgCDJguWpt7Q==
+  FOO2: "bar2"
 
 build_script:
-  ps: echo "Build"
+  sh: echo "Build"
+
+test_script:
+  sh: echo ${FOO}
+  sh: node test.js
+

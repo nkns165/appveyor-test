@@ -11,6 +11,7 @@ build_script:
   sh: echo "Build"
 
 test_script:
-  - sh: echo ${FOO}
-  - sh: FOO=BAR node test.js
+  - sh: >-
+      HOMEBREW_NO_AUTO_UPDATE=1 brew install jq;
+      which jq;
 

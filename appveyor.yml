@@ -14,7 +14,17 @@ test_script:
   - sh: >-
       set -e
       echo "start";
+      function exec_test() {
+        echo "Execute test"
+        if [ "${Exit_CODE}" == "0" ]; then
+          echo "${Exit_CODE}"
+        fi
+      }
+
       if [ "${FOO2}" == "bar2" -a "${FOO2}" == "bar2" ]; then
+          EDGE_CONFIG_PATH="temp.json"
+          exec_test "chromium_edge" "Microsoft Edge" ${SKIP_TEST_CHROMIUM_EDGE}
+          echo "A1"
         echo "hello"
       fi
 
